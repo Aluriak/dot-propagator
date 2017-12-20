@@ -12,9 +12,8 @@ class DotPropagator:
         self.write_header()
 
     def init(self, init):
-        self.__literals = {atom.symbol: init.solver_literal(atom.literal) for atom in init.symbolic_atoms}
         self.__symbols = defaultdict(set)
-        # print('INIT:', self.__literals)
+        # print('INIT:', {atom.symbol: init.solver_literal(atom.literal) for atom in init.symbolic_atoms})
         for atom in init.symbolic_atoms:
             lit = init.solver_literal(atom.literal)
             self.__symbols[lit].add(atom)
