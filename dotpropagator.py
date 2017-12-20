@@ -29,8 +29,11 @@ class DotPropagator:
 
     def undo(self, solver_id, assign, undo):
         # print('UNDO:', undo)
-        prev_node = self.pull_node()
-        self.write('\t{} -> {} [style=dotted label={}];'.format(prev_node, self.last_node, self.__step))
+        while undo:
+            prev_node = self.pull_node()
+            assert prev_node in undo
+            self.write('\t{} -> {} [style=dotted label={}];'.format(prev_node, self.last_node, self.__step))
+            undo.remove(prev_node)
 
     def check(self, ctl):
         self.__stable_nodes.add(self.last_node)
