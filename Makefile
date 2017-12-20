@@ -15,6 +15,6 @@ dot: dot_run dot_conv dot_show
 dot_run:
 	- clingo -n 0 dotpropagator.lp ./test_cases/$(TEST_CASE).lp
 dot_conv:
-	dot -Tpng out.dot > out.png
+	dot -Tpng out/out.dot > out/out.png
 dot_show: dot_conv
-	feh out.png
+	feh out/out.png
