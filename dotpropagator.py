@@ -6,8 +6,8 @@ class DotPropagator:
 
     def __init__(self, dotfiledesc:str):
         self.__dotfiledesc = dotfiledesc
-        self.__stack = ['Start']
-        self.__step = 0
+        self.__stack = ['Start']  # nodes comes here
+        self.__step = 0  # annotate the edges
         self.__stable_nodes = set()  # all checked nodes in the graph
         self.write_header()
 
