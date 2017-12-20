@@ -1,4 +1,4 @@
 Session.vim
 __pycache__/
-out.dot
-out.png
+out/*.dot
+out/out.png

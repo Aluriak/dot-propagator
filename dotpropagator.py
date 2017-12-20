@@ -65,7 +65,7 @@ class DotPropagator:
 
 
 def main(prg):
-    with open('out.dot', 'w') as fd:
+    with open('out/out.dot', 'w') as fd:
         propagator = DotPropagator(fd)
         prg.register_propagator(propagator)
         prg.ground([("base", [])])
